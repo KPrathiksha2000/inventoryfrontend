@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.replace("login.html");
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Inventory Management System</h1>
+    <button onclick="logout()" style="float: right;">Logout</button>
+    <button onclick="generateAnalytics()">📊 View Analytics</button>
+
+    <!-- Product Form -->
+    <div class="form-container">
+        <input type="number" id="productId" placeholder="Product ID (for Update)" style="width:120px;height:28px;font-size:12px;"required>
+        <input type="text" id="name" class="small-input" placeholder="Product Name" style="width:120px;height:28px;font-size:12px;" required>
+        <input type="text" id="description" class="small-input" placeholder="Description" style="width:120px;height:28px;font-size:12px;" required>
+        <input type="number" id="quantity" class="small-input" placeholder="Quantity" style="width:120px;height:28px;font-size:12px;" required>
+        <input type="number" id="price" class="small-input" placeholder="Price" style="width:120px;height:28px;font-size:12px;" required>
+
+        <button id="addProductBtn">Add Product</button>
+        <button id="updateBtn">Update Product</button>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading-spinner" style="display:none;">Loading...</div>
+
+    <!-- Response Message -->
+    <div id="responseMessage" style="margin: 10px 0; font-weight: bold;"></div>
+
+    <!-- Product Table -->
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="productTable">
+        <!-- Products will be added here -->
+        </tbody>
+    </table>
+    <!-- Fixed Chart Container at Bottom -->
+    <div id="analyticsContainer" style="max-width: 400px; height: 300px; margin: 30px auto; display: none;text-align:center;">
+        <canvas id="analyticsChart" style="width: 100%; height: 100%;"></canvas>
+        <button onclick="hideChart()" style="margin-top: 10px;">Hide Analytics</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // ✅ Logout function
+    function logout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.replace("login.html");
+    }
+</script>
+</body>
+</html>
