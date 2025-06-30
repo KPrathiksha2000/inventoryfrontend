@@ -31,24 +31,3 @@ A full-stack **MERN (MongoDB, Express, React, Node.js)** web application that al
 
 ---
 
-## ⚙️ Project Structure
-waste_pickup/
-├── backend/
-│ ├── server.js
-│ ├── models/
-│ │ └── Request.js
-│ └── routes/
-│ └── requestRoutes.js
-├── frontend/
-│ ├── src/
-│ │ ├── pages/
-│ │ │ ├── RequestForm.js
-│ │ │ └── AdminPanel.js
-│ │ ├── App.js
-│ │ └── App.css
-│ └── public/
-│ └── index.html
-├── .gitignore
-├── README.md
-└── package.json
-
