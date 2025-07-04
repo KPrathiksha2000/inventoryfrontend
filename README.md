@@ -4,30 +4,41 @@ A full-stack **MERN (MongoDB, Express, React, Node.js)** web application that al
 
 ---
 
-## 🌟 Features
-
-### 🧍 Resident View
-- Submit a pickup request with:
+### 👤 User
+- Register and log in as a user
+- Schedule a waste pickup by providing:
   - Waste type
   - Quantity
   - Location
-- Simple and mobile-friendly UI
+- View success confirmation
+- Logout functionality
 
-### 👨‍💼 Admin Panel
+### 🛡️ Admin
+- Log in as an admin (no self-registration)
 - View all pickup requests
-- Update request status (Pending → Scheduled → Completed)
-- Delete/cancel requests
+- Mark requests as **Pending**, **Scheduled**, or **Completed**
+- Delete requests (Cancel)
+- Logout functionality
+
+---
+
+## 🔐 Role-Based Access
+
+| Role     | Access                    |
+|----------|---------------------------|
+| User     | `/user` – Schedule pickup |
+| Admin    | `/admin` – Admin panel    |
+| Visitor  | `/` – Login page          |
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer     | Tools/Tech               |
-|-----------|--------------------------|
+| Layer     | Tools/Tech                      |
+|-----------|---------------------------------|
 | Frontend  | React, Axios, React Router, CSS |
-| Backend   | Node.js, Express         |
-| Database  | MongoDB Atlas (Cloud)    |
-| Other     | Mongoose, dotenv, cors, GitHub |
+| Backend   | Node.js, Express                |
+| Database  | MongoDB Atlas (Cloud)           |
+| Other     | Mongoose, dotenv, cors, GitHub  |
 
 ---
-
